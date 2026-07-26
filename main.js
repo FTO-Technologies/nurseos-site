@@ -102,6 +102,28 @@
     document.getElementById('paste-result').classList.add('shown');
   });
 
+  // ---- Email capture (Kit form 9729612; endpoint verified 2026-07-26) -----
+  var emailForm = document.getElementById('email-form');
+  if (emailForm) emailForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = document.getElementById('email-input').value;
+    if (!email) return;
+    var btn = document.getElementById('email-send');
+    btn.disabled = true; btn.textContent = 'Sending\u2026';
+    fetch('https://app.kit.com/forms/9729612/subscriptions', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new URLSearchParams({ email_address: email })
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (d && d.status === 'success') {
+        document.getElementById('email-wrap').classList.add('email-sent');
+      } else { throw new Error('kit rejected'); }
+    }).catch(function () {
+      btn.disabled = false; btn.textContent = 'Send it';
+      document.getElementById('email-error').style.display = 'block';
+    });
+  });
+
   // ---- FAQ accordion (one open at a time) ---------------------------------
   var items = Array.prototype.slice.call(document.querySelectorAll('.faq-item'));
   items.forEach(function (item) {
