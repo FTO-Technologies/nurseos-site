@@ -37,6 +37,18 @@ a:hover { color: #16201a; }
 .tour-cap .capB { display: none; margin: 8px 0 2px; font-size: 14.5px; line-height: 1.6; color: oklch(0.72 0.009 165); max-width: 400px; text-wrap: pretty; }
 .tour-cap.active .capB { display: block; }
 
+/* The sticky stage centers in 100vh, but the translucent nav overlays the top
+   58px — pad it out so the section head never sits flush against the nav, and
+   rebalance the leftover space slightly toward the bottom. */
+#screens > div { padding-top: 74px; box-sizing: border-box; }
+/* Shorter desktop viewports: tighten the head so the phone + captions keep
+   comfortable margins instead of cramming the eyebrow into the nav. */
+@media (min-width: 1080px) and (max-height: 900px) {
+  .tour-head { margin-bottom: 18px !important; }
+  .tour-head > div { margin-bottom: 12px !important; }
+  .tour-head h2 { font-size: 36px !important; letter-spacing: -1.4px !important; }
+}
+
 #tourphone { --k: 1; --pct: 100%; }
 .scr {
   position: absolute; top: 0; left: 0; width: var(--pct); height: var(--pct);
