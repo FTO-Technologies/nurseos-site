@@ -121,19 +121,4 @@
     });
   });
 
-  // ---- Email capture ------------------------------------------------------
-  var emailForm = document.getElementById('email-form');
-  if (emailForm) emailForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var email = document.getElementById('email-input').value;
-    if (!email) return;
-    // ponytail: fire-and-forget to formsubmit.co (no ESP yet); swap endpoint
-    // for a real list provider when one exists.
-    fetch('https://formsubmit.co/ajax/ftotechnologies@gmail.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ email: email, _subject: 'NurseOS one-pager request' })
-    }).catch(function () {});
-    document.getElementById('email-wrap').classList.add('email-sent');
-  });
 })();
