@@ -4,135 +4,687 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NurseOS — Your entire nursing program, organized.</title>
-<meta name="description" content="NurseOS is a calm nursing-school companion for iPhone and Mac. One paste of a Canvas link — deadlines, grades, compliance and study in one quiet place. No account, no server.">
-<meta name="theme-color" content="#20241f">
+<meta name="description" content="One pasted Canvas link becomes a complete semester — deadlines, grades, clinical compliance and study. No account, no server. Free on iPhone, iPad and Mac.">
+<link rel="canonical" href="https://getnurseos.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getnurseos.com/">
+<meta property="og:title" content="NurseOS — Your entire nursing program, organized.">
+<meta property="og:description" content="One pasted Canvas link becomes a complete semester — deadlines, grades, clinical compliance and study. No account. Free on iPhone, iPad and Mac.">
+<meta property="og:image" content="https://getnurseos.com/icon-1024.png">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#eef2ec">
+<link rel="icon" type="image/png" href="icon-1024.png">
+<link rel="apple-touch-icon" href="icon-1024.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Does it work with our LMS?","acceptedAnswer":{"@type":"Answer","text":"NurseOS reads the standard calendar feed that Canvas, Blackboard, Brightspace and Moodle all publish. If your program's LMS can export a calendar link — nearly all can — setup is the same single paste."}},
+{"@type":"Question","name":"Do students need an account?","acceptedAnswer":{"@type":"Answer","text":"No. There is no sign-up, no login, and no NurseOS server. The app stores everything in the student's own iCloud, so it works the moment it's installed."}},
+{"@type":"Question","name":"Where does student data live?","acceptedAnswer":{"@type":"Answer","text":"On the student's devices and in their personal iCloud, encrypted by Apple. Nothing is sent to us — we couldn't read a student's grades if we wanted to. AI features run entirely on-device."}},
+{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"The app is free to download and use. There is no institutional contract, no per-seat license, and nothing for a program to procure — you can simply recommend it at orientation."}},
+{"@type":"Question","name":"How do compliance reminders work?","acceptedAnswer":{"@type":"Answer","text":"When a student adds a document — a CPR card, a TB test, a titer report — the app extracts the dates, applies the renewal rule, and shows its reasoning. Reminders start 30 days before a renewal and never fire during quiet hours."}},
+{"@type":"Question","name":"Does it work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything — schedule, grades, study, documents — is stored locally. A clinical site with no signal changes nothing."}},
+{"@type":"Question","name":"Which programs is it built for?","acceptedAnswer":{"@type":"Answer","text":"BSN, ADN, and accelerated programs on session or semester calendars. Course patterns like NR103 or 8-week sessions are recognized automatically; everything else is configurable in one screen."}}]}
+</script>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="wrap">
-    <a class="wordmark" href="index.html"><span class="dot" aria-hidden="true"></span>NurseOS</a>
-    <nav>
-      <a href="privacy.html">Privacy</a>
-      <a class="get" href="https://apps.apple.com/us/app/nursedash-nursing-planner/id6790085705">Get the app</a>
+<!-- NAV -->
+<header style="position:sticky; top:0; z-index:50; background:rgba(238,242,236,.82); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid rgba(22,32,26,.1);">
+  <div style="max-width:1360px; margin:0 auto; padding:0 56px; height:58px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="#top" style="display:flex; align-items:center; gap:9px; font-weight:700; font-size:16px; letter-spacing:-.2px; color:#16201a;">
+      <span style="width:9px; height:9px; border-radius:50%; background:#6f9d7f;"></span>NurseOS
+    </a>
+    <nav style="display:flex; align-items:center; gap:32px; font-size:13.5px; font-weight:500;">
+      <a href="#handles">Overview</a>
+      <a href="#screens" style="white-space:nowrap;">The app</a>
+      <a href="#compliance">Compliance</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="https://apps.apple.com/us/app/nursedash-nursing-planner/id6790085705">Get the app</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero-copy">
-        <span class="platforms">iPhone · iPad · Mac</span>
-        <h1>Your entire nursing program, organized.</h1>
-        <p class="subline">One paste. One calm screen. The whole BSN — Canvas deadlines, grades, clinical compliance and study, in one quiet place.</p>
-        <div class="cta-row">
-          <!-- Standard App Store badge (recreated). May be swapped 1:1 for Apple's official SVG asset. -->
-          <a class="store-badge" href="https://apps.apple.com/us/app/nursedash-nursing-planner/id6790085705" aria-label="Download on the App Store">
-            <svg class="apple" viewBox="0 0 384 512" width="26" height="34" aria-hidden="true" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-            <span class="lines"><small>Download on the</small>App&nbsp;Store</span>
-          </a>
-          <span class="cta-note">Free · No account</span>
-        </div>
-      </div>
-      <div class="hero-shot-col">
-        <!-- {HERO_SCREENSHOT}: hero-screenshot.png (Now screen in device frame) -->
-        <img class="hero-shot" src="hero-screenshot.png" alt="The NurseOS Now screen — a calm daily verdict, today's study step, and what's next" width="1010" height="1560">
-      </div>
+<!-- HERO -->
+<section id="top" style="position:relative; overflow:hidden; border-bottom:1px solid rgba(22,32,26,.12); background:radial-gradient(1100px 560px at 50% 108%, oklch(0.87 0.05 155 / .6), transparent 62%), #eef2ec;">
+  <div style="max-width:1360px; margin:0 auto; padding:104px 56px 0; display:flex; flex-direction:column; align-items:center; text-align:center;">
+    <div class="mono hero-eyebrow" style="font-size:11px; letter-spacing:.24em; color:#46544b; margin-bottom:34px; white-space:nowrap;">FOR NURSING PROGRAMS&nbsp;&nbsp;·&nbsp;&nbsp;IPHONE&nbsp;&nbsp;IPAD&nbsp;&nbsp;MAC</div>
+    <h1 style="font-size:108px; line-height:.94; letter-spacing:-4.8px; font-weight:800; margin:0 0 30px; max-width:1060px; text-wrap:balance;">Your entire nursing program, organized.</h1>
+    <p style="font-size:20px; line-height:1.55; color:#46544b; max-width:560px; margin:0 0 40px; text-wrap:pretty;">One pasted Canvas link becomes a complete semester — deadlines, grades, clinical compliance and study. No account. Nothing to maintain.</p>
+    <div class="hero-ctas" style="display:flex; align-items:center; gap:20px;">
+      <a class="store-cta" href="https://apps.apple.com/us/app/nursedash-nursing-planner/id6790085705" aria-label="Download on the App Store">
+        <svg viewBox="0 0 384 512" width="23" height="29" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span style="display:flex; flex-direction:column; line-height:1.15; text-align:left;"><span style="font-size:10.5px; opacity:.72;">Download on the</span><span style="font-size:18px; font-weight:600; letter-spacing:-.2px;">App&nbsp;Store</span></span>
+      </a>
+      <span class="mono" style="font-size:12.5px; color:#46544b; white-space:nowrap;">Free · No account</span>
     </div>
-  </section>
-
-  <section class="values" aria-label="What NurseOS does">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">A deep breath, not a cockpit</span>
-        <h2>Three things it quietly handles</h2>
-      </div>
-      <div class="grid">
-        <article class="value">
-          <div class="glyph" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.3l3 3L14 5.5"/></svg>
+    <div class="hero-phone-wrap" style="position:relative; margin-top:76px; margin-bottom:-150px;">
+      <div style="position:relative; width:428px; background:#0b0e0b; border-radius:60px; padding:11px; box-shadow:0 90px 160px -60px rgba(10,20,14,.55), 0 0 0 1px rgba(255,255,255,.35);">
+        <span style="position:absolute; left:-3px; top:148px; width:3.5px; height:24px; border-radius:2px 0 0 2px; background:#272c25;"></span>
+        <span style="position:absolute; left:-3px; top:188px; width:3.5px; height:46px; border-radius:2px 0 0 2px; background:#272c25;"></span>
+        <span style="position:absolute; left:-3px; top:244px; width:3.5px; height:46px; border-radius:2px 0 0 2px; background:#272c25;"></span>
+        <span style="position:absolute; right:-3px; top:206px; width:3.5px; height:70px; border-radius:0 2px 2px 0; background:#272c25;"></span>
+        <div style="background:oklch(0.185 0.006 165); border-radius:50px; overflow:hidden; padding:22px 24px 30px; color:oklch(0.945 0.005 165);">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:2px 6px 0; margin-bottom:28px;">
+            <span style="font-size:15px; font-weight:600;">9:41</span>
+            <span style="width:96px; height:26px; border-radius:15px; background:#000;"></span>
+            <span style="display:flex; gap:6px; align-items:center;"><span style="width:17px; height:11px; border-radius:2px; background:oklch(0.945 0.005 165); opacity:.85;"></span><span style="width:24px; height:12px; border-radius:4px; border:1px solid oklch(0.945 0.005 165 / .5); background:linear-gradient(90deg, oklch(0.82 0.075 155) 70%, transparent 70%);"></span></span>
           </div>
-          <h3>Know you're okay</h3>
-          <p>Every morning, one computed verdict: what's due, what isn't, and the single next thing worth doing. Ten seconds, then back to studying.</p>
-        </article>
-        <article class="value">
-          <div class="glyph" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.4l5.2 2v4.4c0 3.1-2.3 5.2-5.2 6.2-2.9-1-5.2-3.1-5.2-6.2V4.4z"/><path d="M6.5 8.9l1.8 1.8L11.8 7"/></svg>
-          </div>
-          <h3>Never lose clinical eligibility</h3>
-          <p>TB, CPR, titers, drug screens — renewal dates computed for you, each with its reasoning visible. Reminders arrive a month out, never as alarms.</p>
-        </article>
-        <article class="value">
-          <div class="glyph" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v8.5"/><path d="M5.8 8.3L9 11.5l3.2-3.2"/><path d="M3.5 12v2a1.5 1.5 0 0 0 1.5 1.5h8a1.5 1.5 0 0 0 1.5-1.5v-2"/></svg>
-          </div>
-          <h3>Throw anything at it</h3>
-          <p>Share a PDF, scan a form, drop a screenshot. It files itself under the right course — and if you never sort a thing, nothing goes wrong.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="paste" aria-label="How it works">
-    <div class="wrap">
-      <div class="paste-card">
-        <div class="section-head">
-          <span class="eyebrow">Setup</span>
-          <h2>One paste, ever.</h2>
-          <p>No forms, no imports, no weekly upkeep. NurseOS works completely for a student who never organizes anything.</p>
-        </div>
-        <div class="steps">
-          <div class="step">
+          <div class="hero-greeting" style="font-size:32px; font-weight:600; letter-spacing:-.5px;">Good morning, Maya</div>
+          <div class="mono" style="font-size:12px; color:oklch(0.6 0.009 165); margin:7px 0 20px;">Tue Jul 14 · Week 3 of 8 · Session 1</div>
+          <div style="background:oklch(0.222 0.008 165); border:1px solid oklch(0.31 0.008 165); border-radius:19px; padding:17px; display:flex; gap:13px; margin-bottom:13px;">
+            <span style="width:24px; height:24px; flex:none; border-radius:50%; background:oklch(0.27 0.022 158); display:flex; align-items:center; justify-content:center;"><span style="width:10px; height:10px; border-radius:50%; background:oklch(0.82 0.075 155);"></span></span>
             <div>
-              <h3>Paste your Canvas link</h3>
-              <p>The calendar feed URL from Canvas — the app shows you exactly where it lives.</p>
+              <div style="font-size:17px; font-weight:600;">You're okay — nothing due today.</div>
+              <div style="font-size:13.5px; color:oklch(0.6 0.009 165); margin-top:4px; line-height:1.45;">Next: NR103 quiz Thursday · 2 items sorted overnight</div>
             </div>
           </div>
-          <div class="step">
-            <div>
-              <h3>Your semester appears</h3>
-              <p>Courses, deadlines and exams are detected and organized. Grades and compliance are one tap away.</p>
+          <div style="background:linear-gradient(160deg, oklch(0.27 0.022 158), oklch(0.222 0.008 165)); border:1px solid oklch(0.31 0.008 165); border-radius:19px; padding:17px; margin-bottom:13px;">
+            <div class="mono" style="font-size:11px; letter-spacing:.12em; color:oklch(0.82 0.075 155); margin-bottom:9px;">STUDY · BIOS150 EXAM IN 4 DAYS</div>
+            <div style="font-size:17px; font-weight:600; margin-bottom:13px;">A 20-minute review is ready.</div>
+            <span style="display:inline-block; background:oklch(0.66 0.07 155); color:oklch(0.2 0.02 160); font-size:14px; font-weight:600; padding:9px 17px; border-radius:12px;">Start review</span>
+          </div>
+          <div style="background:oklch(0.222 0.008 165); border:1px solid oklch(0.31 0.008 165); border-radius:19px; padding:17px;">
+            <div class="mono" style="font-size:11px; letter-spacing:.12em; color:oklch(0.6 0.009 165); margin-bottom:13px;">NEXT UP</div>
+            <div style="display:flex; flex-direction:column; gap:13px;">
+              <div style="display:flex; align-items:center; gap:11px; font-size:15px;"><span style="width:8px; height:8px; border-radius:50%; background:oklch(0.78 0.06 200);"></span><span style="flex:1;">Quiz 3 — Med calculations</span><span class="mono" style="font-size:12px; color:oklch(0.6 0.009 165);">Thu 9:00</span></div>
+              <div style="display:flex; align-items:center; gap:11px; font-size:15px;"><span style="width:8px; height:8px; border-radius:50%; background:oklch(0.82 0.075 155);"></span><span style="flex:1;">Lab report 4 — Cell transport</span><span class="mono" style="font-size:12px; color:oklch(0.6 0.009 165);">Fri 11:59p</span></div>
+              <div style="display:flex; align-items:center; gap:11px; font-size:15px;"><span style="width:8px; height:8px; border-radius:50%; background:oklch(0.8 0.06 300);"></span><span style="flex:1;">Reflection post — Week 3</span><span class="mono" style="font-size:12px; color:oklch(0.6 0.009 165);">Sun</span></div>
             </div>
           </div>
-          <div class="step">
-            <div>
-              <h3>It stays quiet</h3>
-              <p>A gentle heads-up before things are due — at most three a day, never during quiet hours.</p>
-            </div>
+          <div style="display:flex; align-items:center; gap:11px; padding:18px 6px 6px; font-size:14.5px;">
+            <span style="width:20px; height:20px; border-radius:50%; background:oklch(0.27 0.022 158); display:flex; align-items:center; justify-content:center; color:oklch(0.82 0.075 155); font-size:11px;">✓</span>
+            <span style="color:oklch(0.75 0.008 165);">Compliance — cleared for clinicals</span>
+            <span class="mono" style="font-size:12px; color:oklch(0.6 0.009 165); margin-left:auto;">thru Oct</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="privacy-stripe">
-    <div class="wrap">
-      <div class="inner">
-        <span class="lock" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7.5" width="10" height="7.5" rx="2"/><path d="M6 7.5V6a3 3 0 0 1 6 0v1.5"/></svg>
-        </span>
-        <p class="big">No account. No server. Your data stays in your own iCloud.</p>
-        <div class="privacy-chips" aria-hidden="true">
-          <span>No sign-up</span>
-          <span>No tracking</span>
-          <span>On-device AI</span>
-          <span>Works offline</span>
-        </div>
-        <a class="more" href="privacy.html">Read the privacy policy</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <span>© FTO Technologies</span>
-    <a href="privacy.html">Privacy Policy</a>
-    <span>ftotechnologies@gmail.com</span>
   </div>
+</section>
+
+<!-- TICKER -->
+<div style="border-bottom:1px solid rgba(22,32,26,.12); overflow:hidden; background:#eef2ec; position:relative; z-index:2;">
+  <div class="ticker-track">
+    <div class="mono" style="display:flex; gap:56px; padding-right:56px; font-size:11px; letter-spacing:.2em; color:#46544b; white-space:nowrap;">
+      <span>ONE PASTE SETUP</span><span>·</span><span>NO ACCOUNT</span><span>·</span><span>ON-DEVICE AI</span><span>·</span><span>WORKS OFFLINE</span><span>·</span><span>≤ 3 NOTIFICATIONS A DAY</span><span>·</span><span>DATA STAYS IN ICLOUD</span><span>·</span><span>IPHONE · IPAD · MAC</span><span>·</span>
+    </div>
+    <div class="mono" style="display:flex; gap:56px; padding-right:56px; font-size:11px; letter-spacing:.2em; color:#46544b; white-space:nowrap;" aria-hidden="true">
+      <span>ONE PASTE SETUP</span><span>·</span><span>NO ACCOUNT</span><span>·</span><span>ON-DEVICE AI</span><span>·</span><span>WORKS OFFLINE</span><span>·</span><span>≤ 3 NOTIFICATIONS A DAY</span><span>·</span><span>DATA STAYS IN ICLOUD</span><span>·</span><span>IPHONE · IPAD · MAC</span><span>·</span>
+    </div>
+  </div>
+</div>
+
+<!-- 01 WHAT IT HANDLES -->
+<section id="handles" style="max-width:1360px; margin:0 auto; padding:150px 56px 160px;">
+  <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:64px;">
+    <div class="mono" style="font-size:11px; letter-spacing:.22em; color:#46544b;">01 — WHAT IT QUIETLY HANDLES</div>
+    <div class="mono" style="font-size:11px; letter-spacing:.22em; color:#8a988e;">THREE PROMISES</div>
+  </div>
+  <h2 style="font-size:64px; font-weight:800; letter-spacing:-2.6px; margin:0 0 88px; line-height:1; max-width:760px;">A deep breath, not a cockpit.</h2>
+  <div class="promises" style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0;">
+    <div class="promise" data-reveal>
+      <div class="mono" style="font-size:13px; color:#6f9d7f; margin-bottom:22px;">01</div>
+      <h3 style="font-size:22px; font-weight:700; letter-spacing:-.4px; margin:0 0 14px;">Know you're okay</h3>
+      <p style="font-size:15.5px; line-height:1.65; color:#46544b; margin:0; text-wrap:pretty;">Every morning, one computed verdict: what's due, what isn't, and the single next thing worth doing. Ten seconds, then back to studying.</p>
+    </div>
+    <div class="promise" data-reveal>
+      <div class="mono" style="font-size:13px; color:#6f9d7f; margin-bottom:22px;">02</div>
+      <h3 style="font-size:22px; font-weight:700; letter-spacing:-.4px; margin:0 0 14px;">Never lose clinical eligibility</h3>
+      <p style="font-size:15.5px; line-height:1.65; color:#46544b; margin:0; text-wrap:pretty;">TB, CPR, titers, drug screens — renewal dates computed with the reasoning visible. Reminders arrive a month out, never as alarms.</p>
+    </div>
+    <div class="promise" data-reveal>
+      <div class="mono" style="font-size:13px; color:#6f9d7f; margin-bottom:22px;">03</div>
+      <h3 style="font-size:22px; font-weight:700; letter-spacing:-.4px; margin:0 0 14px;">Throw anything at it</h3>
+      <p style="font-size:15.5px; line-height:1.65; color:#46544b; margin:0; text-wrap:pretty;">Share a PDF, scan a form, drop a screenshot. It files itself under the right course — and if a student never sorts a thing, nothing goes wrong.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 SCREENS · pinned scroll tour -->
+<section id="screens" style="position:relative; height:480vh; background:oklch(0.14 0.007 165); color:oklch(0.945 0.005 165);">
+  <div style="position:sticky; top:0; height:100vh; overflow:hidden; display:flex; align-items:center; background:radial-gradient(1000px 560px at 74% 40%, oklch(0.27 0.022 158 / .55), transparent 65%);">
+    <div class="tour-wrap" style="max-width:1360px; margin:0 auto; padding:0 56px; width:100%; box-sizing:border-box;">
+      <div class="tour-head" style="margin-bottom:34px;">
+        <div class="mono" style="font-size:11px; letter-spacing:.22em; color:oklch(0.6 0.009 165); margin-bottom:20px;">02 — THE APP · A GUIDED SCROLL</div>
+        <h2 style="font-size:46px; font-weight:800; letter-spacing:-1.9px; margin:0; line-height:1; text-wrap:balance; max-width:560px;">One quiet place for all of it.</h2>
+      </div>
+      <div class="tour-grid" style="display:grid; grid-template-columns:1fr 440px; gap:110px; align-items:center;">
+        <div class="tour-caps-col">
+          <div class="tour-caps" style="display:flex; flex-direction:column; gap:4px;">
+            <button class="tour-cap" type="button">
+              <div class="cap-inner">
+                <div style="display:flex; align-items:baseline; gap:14px;">
+                  <span class="capL mono" style="font-size:10.5px; letter-spacing:.14em; color:oklch(0.82 0.075 155); width:74px; flex:none;">NOW</span>
+                  <div style="flex:1; min-width:0;">
+                    <div class="capT" style="font-size:20px; font-weight:700; letter-spacing:-.35px; line-height:1.25;">Know you're okay</div>
+                    <p class="capB">Every morning, one computed verdict: what's due, what isn't, and the single next thing worth doing.</p>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <button class="tour-cap" type="button">
+              <div class="cap-inner">
+                <div style="display:flex; align-items:baseline; gap:14px;">
+                  <span class="capL mono" style="font-size:10.5px; letter-spacing:.14em; color:oklch(0.82 0.075 155); width:74px; flex:none;">THIS WEEK</span>
+                  <div style="flex:1; min-width:0;">
+                    <div class="capT" style="font-size:20px; font-weight:700; letter-spacing:-.35px; line-height:1.25;">Walk in ready</div>
+                    <p class="capB">Clinical days, quizzes and labs on one calm list — with everything needed the night before.</p>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <button class="tour-cap" type="button">
+              <div class="cap-inner">
+                <div style="display:flex; align-items:baseline; gap:14px;">
+                  <span class="capL mono" style="font-size:10.5px; letter-spacing:.14em; color:oklch(0.82 0.075 155); width:74px; flex:none;">STUDY</span>
+                  <div style="flex:1; min-width:0;">
+                    <div class="capT" style="font-size:20px; font-weight:700; letter-spacing:-.35px; line-height:1.25;">Studying that plans itself</div>
+                    <p class="capB">Spaced review built from the syllabus. Twenty quiet minutes, exactly when they count. Tap the card in the phone to try it.</p>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <button class="tour-cap" type="button">
+              <div class="cap-inner">
+                <div style="display:flex; align-items:baseline; gap:14px;">
+                  <span class="capL mono" style="font-size:10.5px; letter-spacing:.14em; color:oklch(0.82 0.075 155); width:74px; flex:none;">COMPLY</span>
+                  <div style="flex:1; min-width:0;">
+                    <div class="capT" style="font-size:20px; font-weight:700; letter-spacing:-.35px; line-height:1.25;">Never lose clinical eligibility</div>
+                    <p class="capB">TB, CPR, titers, drug screens — the renewal date, computed, with the reasoning shown.</p>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <button class="tour-cap" type="button">
+              <div class="cap-inner">
+                <div style="display:flex; align-items:baseline; gap:14px;">
+                  <span class="capL mono" style="font-size:10.5px; letter-spacing:.14em; color:oklch(0.82 0.075 155); width:74px; flex:none;">GRADES</span>
+                  <div style="flex:1; min-width:0;">
+                    <div class="capT" style="font-size:20px; font-weight:700; letter-spacing:-.35px; line-height:1.25;">The number you need</div>
+                    <p class="capB">The running average against the 76% pass line — and the score on the final that keeps the student safe.</p>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div class="tour-hint mono" style="font-size:10.5px; letter-spacing:.18em; color:oklch(0.45 0.009 165); margin-top:40px;">KEEP SCROLLING — THE PHONE TAPS THROUGH ↓</div>
+        </div>
+        <div class="tour-phonecol" style="display:flex; justify-content:center;">
+          <div style="position:relative; width:fit-content; background:#0b0e0b; border-radius:52px; padding:10px; box-shadow:0 70px 130px -50px rgba(0,0,0,.75), 0 0 0 1px oklch(0.32 0.01 165);">
+            <span style="position:absolute; left:-3px; top:118px; width:3.5px; height:20px; border-radius:2px 0 0 2px; background:#31362e;"></span>
+            <span style="position:absolute; left:-3px; top:152px; width:3.5px; height:38px; border-radius:2px 0 0 2px; background:#31362e;"></span>
+            <span style="position:absolute; left:-3px; top:198px; width:3.5px; height:38px; border-radius:2px 0 0 2px; background:#31362e;"></span>
+            <span style="position:absolute; right:-3px; top:166px; width:3.5px; height:58px; border-radius:0 2px 2px 0; background:#31362e;"></span>
+            <div id="tourphone" style="background:var(--bg); border-radius:42px; position:relative; height:min(690px, calc(100vh - 250px)); aspect-ratio:9 / 19.5; overflow:hidden; color:var(--text); --bg:oklch(0.185 0.006 165); --panel:oklch(0.222 0.008 165); --panel2:oklch(0.265 0.009 165); --line:oklch(0.31 0.008 165); --text:oklch(0.945 0.005 165); --text2:oklch(0.75 0.008 165); --text3:oklch(0.6 0.009 165); --sage:oklch(0.82 0.075 155); --sageSolid:oklch(0.66 0.07 155); --sageDim:oklch(0.34 0.03 155); --sageTint:oklch(0.27 0.022 158); --urgent:oklch(0.78 0.115 62);">
+              <div class="status-bar">
+                <span style="font-size:13.5px; font-weight:600;">9:41</span>
+                <span style="width:84px; height:22px; border-radius:12px; background:#000;"></span>
+                <span style="display:flex; gap:5px; align-items:center;"><span style="width:15px; height:10px; border-radius:2px; background:var(--text); opacity:.85;"></span><span style="width:21px; height:11px; border-radius:3.5px; border:1px solid oklch(0.945 0.005 165 / .5); background:linear-gradient(90deg, var(--sage) 70%, transparent 70%);"></span></span>
+              </div>
+
+              <div class="scr" id="scr-0">
+                <div style="font-size:22px; font-weight:600; letter-spacing:-.4px;">Good morning, Maya</div>
+                <div class="mono" style="font-size:9.5px; letter-spacing:.08em; color:var(--text3); margin:5px 0 16px;">TUE JUL 14 · WEEK 3 OF 8 · SESSION 1</div>
+                <div style="background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:14px; display:flex; gap:11px; margin-bottom:10px;">
+                  <span style="width:21px; height:21px; flex:none; border-radius:50%; background:var(--sageTint); display:flex; align-items:center; justify-content:center;"><span style="width:9px; height:9px; border-radius:50%; background:var(--sage);"></span></span>
+                  <div>
+                    <div style="font-size:14.5px; font-weight:600;">You're okay — nothing due today.</div>
+                    <div style="font-size:11.5px; color:var(--text3); margin-top:4px; line-height:1.45;">Next: quiz Thursday · 2 items sorted overnight</div>
+                  </div>
+                </div>
+                <div style="background:linear-gradient(160deg, var(--sageTint), var(--panel)); border:1px solid var(--line); border-radius:16px; padding:14px; margin-bottom:10px;">
+                  <div class="mono" style="font-size:9px; letter-spacing:.12em; color:var(--sage); margin-bottom:8px;">STUDY · BIOS150 EXAM IN 4 DAYS</div>
+                  <div style="font-size:14.5px; font-weight:600; margin-bottom:11px;">A 20-minute review is ready.</div>
+                  <span style="display:inline-block; background:var(--sageSolid); color:oklch(0.2 0.02 160); font-size:12px; font-weight:600; padding:8px 15px; border-radius:10px;">Start review</span>
+                </div>
+                <div style="background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:14px;">
+                  <div class="mono" style="font-size:9px; letter-spacing:.12em; color:var(--text3); margin-bottom:11px;">NEXT UP</div>
+                  <div style="display:flex; flex-direction:column; gap:11px;">
+                    <div style="display:flex; align-items:center; gap:9px; font-size:12.5px;"><span style="width:7px; height:7px; border-radius:50%; background:oklch(0.78 0.06 200); flex:none;"></span><span style="flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Quiz 3 — Med calculations</span><span class="mono" style="flex:none; font-size:10px; color:var(--text3);">Thu 9:00</span></div>
+                    <div style="display:flex; align-items:center; gap:9px; font-size:12.5px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--sage); flex:none;"></span><span style="flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Lab report 4 — Cell transport</span><span class="mono" style="flex:none; font-size:10px; color:var(--text3);">Fri 11:59p</span></div>
+                  </div>
+                </div>
+                <div style="display:flex; align-items:center; gap:9px; padding:13px 4px 0; font-size:12px;">
+                  <span style="width:17px; height:17px; flex:none; border-radius:50%; background:var(--sageTint); display:flex; align-items:center; justify-content:center; color:var(--sage); font-size:9px;">✓</span>
+                  <span style="color:var(--text2);">Compliance — cleared for clinicals</span>
+                  <span class="mono" style="font-size:10px; color:var(--text3); margin-left:auto;">thru Oct</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:9px; padding:9px 4px 0; font-size:12px;">
+                  <span style="width:17px; height:17px; flex:none; border-radius:50%; background:var(--sageTint); display:flex; align-items:center; justify-content:center; color:var(--sage); font-size:9px;">✓</span>
+                  <span style="color:var(--text2);">Grades — on track in 2 of 3</span>
+                  <span class="mono" style="font-size:10px; color:var(--text3); margin-left:auto;">84% avg</span>
+                </div>
+              </div>
+
+              <div class="scr" id="scr-1">
+                <div style="font-size:22px; font-weight:600; letter-spacing:-.4px;">This week</div>
+                <div class="mono" style="font-size:9.5px; letter-spacing:.08em; color:var(--text3); margin:5px 0 16px;">WEEK 3 OF 8 · JUL 13–19</div>
+                <div style="background:linear-gradient(160deg, var(--sageTint), var(--panel)); border:1px solid var(--line); border-radius:16px; padding:14px; margin-bottom:10px;">
+                  <div class="mono" style="font-size:9px; letter-spacing:.12em; color:var(--sage); margin-bottom:7px;">WED · CLINICAL DAY</div>
+                  <div style="font-size:14.5px; font-weight:600;">Walk in ready.</div>
+                  <div style="font-size:11.5px; color:var(--text2); margin-top:5px; line-height:1.5;">Compliance cleared · badge, stethoscope and care plan on tonight's list</div>
+                </div>
+                <div style="background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:5px 14px;">
+                  <div style="display:flex; align-items:center; gap:11px; padding:11px 0; border-bottom:1px solid var(--line);"><span class="mono" style="font-size:9.5px; color:var(--text3); width:30px; flex:none;">THU</span><span style="width:7px; height:7px; border-radius:50%; background:oklch(0.78 0.06 200); flex:none;"></span><span style="flex:1; min-width:0; font-size:12.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Quiz 3 — Med calculations</span><span class="mono" style="flex:none; font-size:9.5px; color:var(--text3);">9:00</span></div>
+                  <div style="display:flex; align-items:center; gap:11px; padding:11px 0; border-bottom:1px solid var(--line);"><span class="mono" style="font-size:9.5px; color:var(--text3); width:30px; flex:none;">FRI</span><span style="width:7px; height:7px; border-radius:50%; background:var(--sage); flex:none;"></span><span style="flex:1; min-width:0; font-size:12.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Lab report 4 — Cell transport</span><span class="mono" style="flex:none; font-size:9.5px; color:var(--text3);">11:59p</span></div>
+                  <div style="display:flex; align-items:center; gap:11px; padding:11px 0;"><span class="mono" style="font-size:9.5px; color:var(--text3); width:30px; flex:none;">SUN</span><span style="width:7px; height:7px; border-radius:50%; background:oklch(0.8 0.06 300); flex:none;"></span><span style="flex:1; min-width:0; font-size:12.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Reflection post — Week 3</span><span class="mono" style="flex:none; font-size:9.5px; color:var(--text3);">—</span></div>
+                </div>
+                <div style="background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:14px; margin-top:10px;">
+                  <div class="mono" style="font-size:9px; letter-spacing:.12em; color:var(--text3); margin-bottom:9px;">TONIGHT'S LIST</div>
+                  <div style="display:flex; align-items:center; gap:9px; font-size:12px; padding:4px 0;"><span style="width:15px; height:15px; flex:none; border-radius:50%; background:var(--sageSolid); color:oklch(0.2 0.02 160); display:flex; align-items:center; justify-content:center; font-size:8px;">✓</span><span style="color:var(--text3); text-decoration:line-through;">Print care plan</span></div>
+                  <div style="display:flex; align-items:center; gap:9px; font-size:12px; padding:4px 0;"><span style="width:15px; height:15px; flex:none; border-radius:50%; border:1.5px solid var(--sage); box-sizing:border-box;"></span><span>Pack badge &amp; stethoscope</span></div>
+                  <div style="display:flex; align-items:center; gap:9px; font-size:12px; padding:4px 0;"><span style="width:15px; height:15px; flex:none; border-radius:50%; border:1.5px solid var(--text3); box-sizing:border-box;"></span><span style="color:var(--text2);">Review med list · 10 min</span></div>
+                </div>
+                <div style="font-size:11px; color:var(--text3); margin-top:11px; line-height:1.5; padding:0 4px;">Nothing hidden below the fold — this is the whole week.</div>
+              </div>
+
+              <div class="scr" id="scr-2">
+                <div style="font-size:22px; font-weight:600; letter-spacing:-.4px;">Study</div>
+                <div class="mono" style="font-size:9.5px; letter-spacing:.08em; color:var(--text3); margin:5px 0 16px;">SESSION 1 · JUL–AUG 2026</div>
+                <div id="flashcard" style="background:linear-gradient(160deg, var(--sageTint), var(--panel)); border:1px solid var(--line); border-radius:16px; padding:14px; margin-bottom:9px; cursor:pointer;">
+                  <div style="display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:9px;">
+                    <span class="mono" style="font-size:9px; letter-spacing:.1em; color:var(--sage); white-space:nowrap;">DUE TO PRACTICE</span>
+                    <span class="mono" style="font-size:9px; color:var(--text3); white-space:nowrap;">14 RIPE</span>
+                  </div>
+                  <div style="font-size:14px; font-weight:600; line-height:1.45;">Which electrolyte imbalance causes peaked T-waves on an ECG?</div>
+                  <div id="flash-answer" style="display:none; font-size:12.5px; color:var(--sage); font-weight:600; margin-top:10px; border-top:1px solid var(--line); padding-top:9px; line-height:1.45;">Hyperkalemia — K+ above 5.0 mEq/L</div>
+                  <div id="flash-hint" style="font-size:11.5px; color:var(--text3); margin-top:10px;">Tap to reveal</div>
+                </div>
+                <div style="display:flex; gap:7px; margin-bottom:13px;">
+                  <span style="flex:1; text-align:center; font-size:12px; padding:9px 0; border-radius:10px; border:1px solid var(--line); background:var(--panel); color:var(--text2);">Again</span>
+                  <span style="flex:1; text-align:center; font-size:12px; padding:9px 0; border-radius:10px; border:1px solid var(--line); background:var(--panel); color:var(--text2);">Good</span>
+                  <span style="flex:1; text-align:center; font-size:12px; padding:9px 0; border-radius:10px; background:var(--sageSolid); color:oklch(0.2 0.02 160); font-weight:600;">Easy</span>
+                </div>
+                <div class="mono" style="font-size:9px; letter-spacing:.14em; color:var(--text3); margin-bottom:7px;">EXAM STUDY PLAN</div>
+                <div style="background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:12px 14px;">
+                  <div style="display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:5px;">
+                    <span style="font-size:13px; font-weight:600; white-space:nowrap;">BIOS150 Exam 1</span>
+                    <span class="mono" style="flex:none; font-size:9px; color:var(--text3); white-space:nowrap;">JUL 20 · 4D</span>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:9px; padding:5px 0;"><span style="width:16px; height:16px; flex:none; border-radius:50%; background:var(--sageSolid); color:oklch(0.2 0.02 160); display:flex; align-items:center; justify-content:center; font-size:9px;">✓</span><span style="flex:1; font-size:12px; color:var(--text3); text-decoration:line-through; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Membrane transport</span><span class="mono" style="font-size:9px; color:var(--text3);">TUE</span></div>
+                  <div style="display:flex; align-items:center; gap:9px; padding:5px 0;"><span style="width:16px; height:16px; flex:none; border-radius:50%; border:1.5px solid var(--sage); box-sizing:border-box;"></span><span style="flex:1; font-size:12px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Cell transport review</span><span class="mono" style="font-size:9px; color:var(--sage);">WED</span></div>
+                  <div style="display:flex; align-items:center; gap:9px; padding:5px 0;"><span style="width:16px; height:16px; flex:none; border-radius:50%; border:1.5px solid var(--text3); box-sizing:border-box;"></span><span style="flex:1; font-size:12px; color:var(--text2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Membrane potentials</span><span class="mono" style="font-size:9px; color:var(--text3);">THU</span></div>
+                </div>
+              </div>
+
+              <div class="scr" id="scr-3">
+                <div style="font-size:22px; font-weight:600; letter-spacing:-.4px;">Compliance</div>
+                <div style="font-size:11.5px; color:var(--text3); margin:5px 0 16px; line-height:1.45;">Renewal dates are computed automatically.</div>
+                <div style="display:flex; flex-direction:column; gap:9px;">
+                  <div style="background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:13px 14px;">
+                    <div style="display:flex; align-items:flex-start; gap:8px;">
+                      <div style="flex:1; min-width:0;"><div style="font-size:13px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">TB Two-Step PPD</div><div style="font-size:11px; color:var(--urgent); margin-top:3px;">Complete by Jul 19 · 9 days</div></div>
+                      <span style="flex:none; font-size:10px; font-weight:600; padding:3px 9px; border-radius:20px; background:oklch(0.32 0.05 62); color:var(--urgent); white-space:nowrap;">In progress</span>
+                    </div>
+                    <div class="mono" style="font-size:9.5px; color:var(--text3); margin-top:7px;">2 of 4 steps complete</div>
+                  </div>
+                  <div style="background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:13px 14px;">
+                    <div style="display:flex; align-items:flex-start; gap:8px;">
+                      <div style="flex:1; min-width:0;"><div style="font-size:13px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">CPR / BLS (AHA)</div><div style="font-size:11px; color:var(--sage); margin-top:3px;">Valid until May 2027</div></div>
+                      <span style="flex:none; font-size:10px; font-weight:600; padding:3px 9px; border-radius:20px; background:var(--sageTint); color:var(--sage); white-space:nowrap;">Complete</span>
+                    </div>
+                  </div>
+                  <div style="background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:13px 14px;">
+                    <div style="display:flex; align-items:flex-start; gap:8px;">
+                      <div style="flex:1; min-width:0;"><div style="font-size:13px; font-weight:600;">Drug screen</div><div style="font-size:11px; color:var(--urgent); margin-top:3px;">Renew by Aug 1 · 22 days</div></div>
+                      <span style="flex:none; font-size:10px; font-weight:600; padding:3px 9px; border-radius:20px; background:oklch(0.32 0.05 62); color:var(--urgent); white-space:nowrap;">Renew soon</span>
+                    </div>
+                    <div style="font-size:10.5px; color:var(--text3); margin-top:7px; line-height:1.5;">One month before Session 3 starts — the 1st of that month.</div>
+                  </div>
+                  <div style="background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:13px 14px;">
+                    <div style="display:flex; align-items:flex-start; gap:8px;">
+                      <div style="flex:1; min-width:0;"><div style="font-size:13px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Titers — MMR &amp; Varicella</div><div style="font-size:11px; color:var(--sage); margin-top:3px;">On file · no renewal needed</div></div>
+                      <span style="flex:none; font-size:10px; font-weight:600; padding:3px 9px; border-radius:20px; background:var(--sageTint); color:var(--sage); white-space:nowrap;">Complete</span>
+                    </div>
+                  </div>
+                  <div style="background:linear-gradient(160deg, var(--sageTint), var(--panel)); border:1px solid var(--line); border-radius:16px; padding:12px 14px;">
+                    <div class="mono" style="font-size:9px; letter-spacing:.12em; color:var(--sage); margin-bottom:6px;">THE RULE, SHOWN</div>
+                    <div class="mono" style="font-size:9.5px; line-height:1.7; color:var(--text2);">TB step 2 read Jul 10 → annual<br>→ renew by Jul 10 2027</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="scr" id="scr-4">
+                <div style="font-size:22px; font-weight:600; letter-spacing:-.4px;">Grades</div>
+                <div class="mono" style="font-size:9.5px; letter-spacing:.08em; color:var(--text3); margin:5px 0 16px;">SESSION 1 · JUL–AUG 2026</div>
+                <div style="display:flex; align-items:center; gap:8px; background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:11px 13px; margin-bottom:9px;">
+                  <span style="width:20px; height:20px; flex:none; border-radius:50%; background:var(--sageTint); color:var(--sage); display:flex; align-items:center; justify-content:center; font-size:10px;">✓</span>
+                  <span style="font-size:11.5px; font-weight:500; line-height:1.4;">On track in 2 courses — <span style="color:var(--urgent);">BIOS150 Lab is close to the line.</span></span>
+                </div>
+                <div style="background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:13px 14px; margin-bottom:9px;">
+                  <div style="display:flex; align-items:center; gap:7px;">
+                    <span style="width:8px; height:8px; flex:none; border-radius:50%; background:var(--sage);"></span>
+                    <span style="flex:1; min-width:0; font-size:13px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Human Biology</span>
+                    <span style="flex:none; font-size:9.5px; font-weight:600; padding:3px 8px; border-radius:20px; background:oklch(0.32 0.05 62); color:var(--urgent); white-space:nowrap;">Close to the line</span>
+                  </div>
+                  <div style="display:flex; align-items:baseline; gap:7px; margin-top:9px;">
+                    <span class="mono" style="font-size:20px; font-weight:600; color:var(--urgent);">78%</span>
+                    <span style="font-size:10.5px; color:var(--text3); white-space:nowrap;">Lab · 2 over the line</span>
+                  </div>
+                  <div style="position:relative; height:7px; border-radius:6px; background:var(--panel2); margin-top:8px;">
+                    <div style="position:absolute; top:0; bottom:0; left:0; width:78%; border-radius:6px; background:var(--urgent);"></div>
+                    <div style="position:absolute; top:-3px; bottom:-3px; left:76%; width:2px; background:var(--text3); opacity:.7;"></div>
+                  </div>
+                  <div style="font-size:11px; color:var(--text2); margin-top:8px; line-height:1.5;">Need <span class="mono" style="font-weight:600; color:var(--text);">83%</span> on the final practical.</div>
+                </div>
+                <div style="background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:13px 14px;">
+                  <div style="display:flex; align-items:center; gap:7px;">
+                    <span style="width:8px; height:8px; flex:none; border-radius:50%; background:oklch(0.78 0.06 200);"></span>
+                    <span style="flex:1; min-width:0; font-size:13px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Transition to Nursing</span>
+                    <span style="flex:none; font-size:9.5px; font-weight:600; padding:3px 8px; border-radius:20px; background:var(--sageTint); color:var(--sage); white-space:nowrap;">On track</span>
+                  </div>
+                  <div style="display:flex; align-items:baseline; gap:7px; margin-top:9px;">
+                    <span class="mono" style="font-size:20px; font-weight:600; color:var(--sage);">84%</span>
+                    <span style="font-size:10.5px; color:var(--text3); white-space:nowrap;">NR103 · running B</span>
+                  </div>
+                  <div style="position:relative; height:7px; border-radius:6px; background:var(--panel2); margin-top:8px;">
+                    <div style="position:absolute; top:0; bottom:0; left:0; width:84%; border-radius:6px; background:var(--sage);"></div>
+                    <div style="position:absolute; top:-3px; bottom:-3px; left:76%; width:2px; background:var(--text3); opacity:.7;"></div>
+                  </div>
+                </div>
+                <div style="background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:13px 14px; margin-top:9px;">
+                  <div style="display:flex; align-items:center; gap:7px;">
+                    <span style="width:8px; height:8px; flex:none; border-radius:50%; background:oklch(0.8 0.06 300);"></span>
+                    <span style="flex:1; min-width:0; font-size:13px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Pathophysiology</span>
+                    <span style="flex:none; font-size:9.5px; font-weight:600; padding:3px 8px; border-radius:20px; background:var(--sageTint); color:var(--sage); white-space:nowrap;">On track</span>
+                  </div>
+                  <div style="display:flex; align-items:baseline; gap:7px; margin-top:9px;">
+                    <span class="mono" style="font-size:20px; font-weight:600; color:var(--sage);">91%</span>
+                    <span style="font-size:10.5px; color:var(--text3); white-space:nowrap;">PATH · running A−</span>
+                  </div>
+                  <div style="position:relative; height:7px; border-radius:6px; background:var(--panel2); margin-top:8px;">
+                    <div style="position:absolute; top:0; bottom:0; left:0; width:91%; border-radius:6px; background:var(--sage);"></div>
+                    <div style="position:absolute; top:-3px; bottom:-3px; left:76%; width:2px; background:var(--text3); opacity:.7;"></div>
+                  </div>
+                </div>
+                <div style="background:linear-gradient(160deg, var(--sageTint), var(--panel)); border:1px solid var(--line); border-radius:16px; padding:12px 14px; margin-top:9px;">
+                  <div class="mono" style="font-size:9px; letter-spacing:.12em; color:var(--sage); margin-bottom:6px;">WHAT-IF</div>
+                  <div style="font-size:11.5px; line-height:1.55; color:var(--text2);">A 78 on the BIOS150 practical keeps the B. An 83 clears the line for good.</div>
+                </div>
+              </div>
+
+              <div class="tab-bar">
+                <button class="tb" type="button"><svg width="19" height="19" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.2 9 3l6 5.2"></path><path d="M4.6 7.7v6.8h8.8V7.7"></path></svg><span style="font-size:9px; font-weight:500;">Now</span></button>
+                <button class="tb" type="button"><svg width="19" height="19" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.2" width="12" height="10.8" rx="2"></rect><path d="M3 7.6h12M6.4 2.6v3M11.6 2.6v3"></path></svg><span style="font-size:9px; font-weight:500;">Week</span></button>
+                <button class="tb" type="button"><svg width="19" height="19" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4.6C7.5 3.5 5.4 3.3 3.5 3.9v9.3c1.9-.6 4-.4 5.5.7 1.5-1.1 3.6-1.3 5.5-.7V3.9C12.6 3.3 10.5 3.5 9 4.6z"></path><path d="M9 4.6v9.3"></path></svg><span style="font-size:9px; font-weight:500;">Study</span></button>
+                <button class="tb" type="button"><svg width="19" height="19" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.4l5.2 2v4.4c0 3.1-2.3 5.2-5.2 6.2-2.9-1-5.2-3.1-5.2-6.2V4.4z"></path><path d="M6.5 8.9l1.8 1.8L11.8 7"></path></svg><span style="font-size:9px; font-weight:500;">Comply</span></button>
+                <button class="tb" type="button"><svg width="19" height="19" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="3.4" y="9" width="2.7" height="5.6" rx="1"></rect><rect x="7.7" y="5.4" width="2.7" height="9.2" rx="1"></rect><rect x="11.9" y="7.4" width="2.7" height="7.2" rx="1"></rect></svg><span style="font-size:9px; font-weight:500;">Grades</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 SETUP -->
+<section id="how" style="max-width:1360px; margin:0 auto; padding:150px 56px 160px;">
+  <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:64px;">
+    <div class="mono" style="font-size:11px; letter-spacing:.22em; color:#46544b;">03 — SETUP</div>
+    <div class="mono" style="font-size:11px; letter-spacing:.22em; color:#8a988e;">60 SECONDS, ONCE</div>
+  </div>
+  <div class="setup-grid" style="display:grid; grid-template-columns:.9fr 1.1fr; gap:96px; align-items:start;">
+    <div>
+      <h2 style="font-size:64px; font-weight:800; letter-spacing:-2.6px; margin:0 0 24px; line-height:1;">One paste, ever.</h2>
+      <p style="font-size:17px; line-height:1.65; color:#46544b; margin:0 0 44px; text-wrap:pretty;">No forms, no imports, no weekly upkeep. If your students can copy a link, they can run NurseOS for a whole degree.</p>
+      <div style="background:#fff; border:1px solid rgba(22,32,26,.14); border-radius:15px; padding:15px 19px; display:flex; align-items:center; gap:14px; box-shadow:0 30px 60px -40px rgba(16,28,20,.4);">
+        <span class="mono" style="font-size:13px; color:#6b7a70; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">https://canvas.school.edu/feeds/calendars/user_kx82…</span>
+        <button class="paste-btn" id="paste-btn" type="button">Paste</button>
+      </div>
+      <div id="paste-result">
+        <span style="width:18px; height:18px; border-radius:50%; background:rgba(111,157,127,.22); display:flex; align-items:center; justify-content:center; font-size:11px;">✓</span>
+        Semester detected — 6 courses · 41 deadlines · 2 exams
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column;">
+      <div data-reveal style="display:flex; gap:36px; border-top:1px solid rgba(22,32,26,.14); padding:30px 0;">
+        <span class="mono" style="font-size:14px; color:#6f9d7f; width:36px; flex:none; padding-top:3px;">01</span>
+        <div><h3 style="font-size:20px; font-weight:700; letter-spacing:-.3px; margin:0 0 9px;">Paste the Canvas link</h3><p style="font-size:15.5px; line-height:1.65; color:#46544b; margin:0; max-width:460px;">The calendar feed URL from Canvas — the app shows exactly where it lives, with a screenshot for every LMS layout.</p></div>
+      </div>
+      <div data-reveal style="display:flex; gap:36px; border-top:1px solid rgba(22,32,26,.14); padding:30px 0;">
+        <span class="mono" style="font-size:14px; color:#6f9d7f; width:36px; flex:none; padding-top:3px;">02</span>
+        <div><h3 style="font-size:20px; font-weight:700; letter-spacing:-.3px; margin:0 0 9px;">The semester appears</h3><p style="font-size:15.5px; line-height:1.65; color:#46544b; margin:0; max-width:460px;">Courses, deadlines and exams are detected and organized. Grades and compliance are one tap away from day one.</p></div>
+      </div>
+      <div data-reveal style="display:flex; gap:36px; border-top:1px solid rgba(22,32,26,.14); border-bottom:1px solid rgba(22,32,26,.14); padding:30px 0;">
+        <span class="mono" style="font-size:14px; color:#6f9d7f; width:36px; flex:none; padding-top:3px;">03</span>
+        <div><h3 style="font-size:20px; font-weight:700; letter-spacing:-.3px; margin:0 0 9px;">It stays quiet</h3><p style="font-size:15.5px; line-height:1.65; color:#46544b; margin:0; max-width:460px;">A gentle heads-up before things are due — at most three a day, never during quiet hours, never as a guilt trip.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 COMPLIANCE · dark -->
+<section id="compliance" style="background:radial-gradient(800px 400px at 85% 0%, oklch(0.27 0.022 158 / .6), transparent 60%), oklch(0.14 0.007 165); color:oklch(0.945 0.005 165);">
+  <div style="max-width:1360px; margin:0 auto; padding:130px 56px 140px;">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:64px;">
+      <div class="mono" style="font-size:11px; letter-spacing:.22em; color:oklch(0.6 0.009 165);">04 — FOR CLINICAL COORDINATORS</div>
+      <div class="mono" style="font-size:11px; letter-spacing:.22em; color:oklch(0.45 0.009 165);">THE RULE, SHOWN</div>
+    </div>
+    <div class="compliance-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:96px; align-items:center;">
+      <div>
+        <h2 style="font-size:58px; font-weight:800; letter-spacing:-2.4px; margin:0 0 28px; line-height:1.02; text-wrap:balance;">Clinical eligibility, computed — not chased.</h2>
+        <p style="font-size:17px; line-height:1.7; color:oklch(0.72 0.009 165); margin:0 0 20px; text-wrap:pretty;">Every program loses clinical hours to expired paperwork. NurseOS reads the document a student drops in, extracts the dates, applies the renewal rule, and shows its work — so the student trusts the deadline instead of ignoring it.</p>
+        <p style="font-size:17px; line-height:1.7; color:oklch(0.72 0.009 165); margin:0 0 44px; text-wrap:pretty;">Reminders begin 30 days out and escalate gently. No portal logins, no spreadsheet from the coordinator's office, no expired TB test on the morning of clinicals.</p>
+        <div style="display:flex; gap:0; border-top:1px solid oklch(0.945 0.005 165 / .14); padding-top:24px;">
+          <div style="flex:1; border-right:1px solid oklch(0.945 0.005 165 / .12); padding-right:28px;"><div style="font-size:26px; font-weight:700; letter-spacing:-.5px;">30 days</div><div style="font-size:13px; color:oklch(0.6 0.009 165); margin-top:3px;">first reminder, ahead of every renewal</div></div>
+          <div style="flex:1; padding-left:28px;"><div style="font-size:26px; font-weight:700; letter-spacing:-.5px;">On file</div><div style="font-size:13px; color:oklch(0.6 0.009 165); margin-top:3px;">the proof document, one tap from the deadline</div></div>
+        </div>
+      </div>
+      <div style="background:oklch(0.19 0.007 165); border:1px solid oklch(0.945 0.005 165 / .1); border-radius:24px; padding:30px; box-shadow:0 60px 110px -50px rgba(0,0,0,.7);">
+        <div class="mono" style="font-size:11px; letter-spacing:.16em; color:oklch(0.82 0.075 155); margin-bottom:22px;">RENEWAL LOGIC · VISIBLE</div>
+        <div style="display:flex; flex-direction:column;">
+          <div style="display:flex; gap:14px; padding:15px 0; border-bottom:1px solid oklch(0.945 0.005 165 / .09); align-items:center;"><span style="width:9px; height:9px; border-radius:50%; background:oklch(0.82 0.075 155); flex:none;"></span><div style="flex:1;"><div style="font-size:15.5px; font-weight:600;">CPR — AHA BLS Provider</div><div class="mono" style="font-size:11px; color:oklch(0.6 0.009 165); margin-top:5px; line-height:1.6;">card issued Mar 12 2026 → AHA valid 2 yrs → renew by Mar 12 2028</div></div></div>
+          <div style="display:flex; gap:14px; padding:15px 0; border-bottom:1px solid oklch(0.945 0.005 165 / .09); align-items:center;"><span style="width:9px; height:9px; border-radius:50%; background:oklch(0.82 0.075 155); flex:none;"></span><div style="flex:1;"><div style="font-size:15.5px; font-weight:600;">TB — 2-step PPD</div><div class="mono" style="font-size:11px; color:oklch(0.6 0.009 165); margin-top:5px; line-height:1.6;">step 2 read Oct 14 2025 → annual → renew by Oct 14 2026</div></div></div>
+          <div style="display:flex; gap:14px; padding:15px 0; border-bottom:1px solid oklch(0.945 0.005 165 / .09); align-items:center;"><span style="width:9px; height:9px; border-radius:50%; background:oklch(0.78 0.115 62); flex:none;"></span><div style="flex:1;"><div style="font-size:15.5px; font-weight:600;">Flu vaccine — 2026 season</div><div class="mono" style="font-size:11px; color:oklch(0.72 0.08 62); margin-top:5px; line-height:1.6;">site requires by Sep 30 → reminder scheduled Aug 31</div></div></div>
+          <div style="display:flex; gap:14px; padding:15px 0; align-items:center;"><span style="width:9px; height:9px; border-radius:50%; background:oklch(0.82 0.075 155); flex:none;"></span><div style="flex:1;"><div style="font-size:15.5px; font-weight:600;">Titers — MMR, Varicella, Hep B</div><div class="mono" style="font-size:11px; color:oklch(0.6 0.009 165); margin-top:5px; line-height:1.6;">immune · lab report on file · no renewal needed</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 DEVICES -->
+<section id="devices" style="max-width:1360px; margin:0 auto; padding:150px 56px 150px;">
+  <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:64px;">
+    <div class="mono" style="font-size:11px; letter-spacing:.22em; color:#46544b;">05 — IPHONE · IPAD · MAC</div>
+    <div class="mono" style="font-size:11px; letter-spacing:.22em; color:#8a988e;">SYNCED VIA ICLOUD</div>
+  </div>
+  <div class="devices-head" style="display:flex; align-items:baseline; justify-content:space-between; gap:48px; margin-bottom:88px;">
+    <h2 style="font-size:64px; font-weight:800; letter-spacing:-2.6px; margin:0; line-height:1; text-wrap:balance; max-width:680px;">One quiet system, on every screen.</h2>
+    <p style="font-size:16px; color:#46544b; max-width:380px; margin:0; line-height:1.6; text-wrap:pretty;">Native on all three, synced through the student's own iCloud. Study on the iPad in the library, check the verdict on the phone at clinicals.</p>
+  </div>
+  <div class="devices-row" style="display:flex; align-items:center; justify-content:center; gap:56px;">
+    <div class="device" data-reveal style="width:480px; flex:none; min-width:0;">
+      <div style="background:#0b0e0b; border-radius:14px; padding:0 7px 7px; box-shadow:0 60px 100px -50px rgba(16,28,20,.55), 0 0 0 1px rgba(255,255,255,.3);">
+        <div style="display:flex; gap:6px; padding:10px 5px 9px;"><span style="width:9px; height:9px; border-radius:50%; background:#e0655a;"></span><span style="width:9px; height:9px; border-radius:50%; background:#dfa93f;"></span><span style="width:9px; height:9px; border-radius:50%; background:#68b562;"></span></div>
+        <div style="background:oklch(0.185 0.006 165); border-radius:8px; aspect-ratio:16 / 10; display:flex; overflow:hidden; color:oklch(0.945 0.005 165);">
+          <div style="width:112px; flex:none; background:oklch(0.165 0.006 165); padding:12px 9px; display:flex; flex-direction:column; gap:2px; border-right:1px solid oklch(0.31 0.008 165); box-sizing:border-box;">
+            <div style="font-size:11px; font-weight:700; padding:0 6px 8px;">NurseOS</div>
+            <div style="font-size:10.5px; padding:5px 7px; border-radius:6px; background:oklch(0.27 0.022 158); color:oklch(0.82 0.075 155); font-weight:600;">Now</div>
+            <div style="font-size:10.5px; padding:5px 7px; color:oklch(0.6 0.009 165);">This week</div>
+            <div style="font-size:10.5px; padding:5px 7px; color:oklch(0.6 0.009 165);">Grades</div>
+            <div style="font-size:10.5px; padding:5px 7px; color:oklch(0.6 0.009 165);">Compliance</div>
+            <div style="font-size:10.5px; padding:5px 7px; color:oklch(0.6 0.009 165);">Study</div>
+            <div style="font-size:10.5px; padding:5px 7px; color:oklch(0.6 0.009 165);">Documents</div>
+          </div>
+          <div style="flex:1; min-width:0; padding:14px 16px; box-sizing:border-box;">
+            <div style="font-size:14.5px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Good morning, Maya</div>
+            <div class="mono" style="font-size:8.5px; color:oklch(0.6 0.009 165); margin:3px 0 10px;">TUE JUL 14 · WEEK 3 OF 8</div>
+            <div style="background:oklch(0.222 0.008 165); border:1px solid oklch(0.31 0.008 165); border-radius:9px; padding:9px 11px; display:flex; gap:8px; align-items:center; margin-bottom:8px;"><span style="width:6px; height:6px; flex:none; border-radius:50%; background:oklch(0.82 0.075 155);"></span><span style="font-size:11px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">You're okay — nothing due today.</span></div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <div style="background:oklch(0.222 0.008 165); border:1px solid oklch(0.31 0.008 165); border-radius:9px; padding:9px 11px; min-width:0;"><div class="mono" style="font-size:7px; letter-spacing:.1em; color:oklch(0.82 0.075 155); margin-bottom:4px;">STUDY</div><div style="font-size:10.5px; font-weight:600; line-height:1.4;">20-min BIOS150 review ready</div></div>
+              <div style="background:oklch(0.222 0.008 165); border:1px solid oklch(0.31 0.008 165); border-radius:9px; padding:9px 11px; min-width:0;"><div class="mono" style="font-size:7px; letter-spacing:.1em; color:oklch(0.6 0.009 165); margin-bottom:4px;">NEXT UP</div><div style="font-size:10.5px; font-weight:600; line-height:1.4;">Quiz 3 — Thu 9:00</div></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:7px; padding:9px 2px 0; font-size:9.5px;"><span style="width:12px; height:12px; flex:none; border-radius:50%; background:oklch(0.27 0.022 158); display:flex; align-items:center; justify-content:center; color:oklch(0.82 0.075 155); font-size:7px;">✓</span><span style="color:oklch(0.75 0.008 165); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Compliance — cleared for clinicals</span><span class="mono" style="font-size:8px; color:oklch(0.6 0.009 165); margin-left:auto; white-space:nowrap;">thru Oct</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="mono" style="font-size:11.5px; color:#46544b; margin-top:18px; text-align:center; letter-spacing:.14em;">MAC</div>
+    </div>
+    <div class="device" data-reveal style="width:280px; flex:none;">
+      <div style="background:#0b0e0b; border-radius:22px; padding:11px; box-shadow:0 50px 80px -45px rgba(16,28,20,.55), 0 0 0 1px rgba(255,255,255,.3);">
+        <div style="background:oklch(0.185 0.006 165); border-radius:12px; aspect-ratio:3 / 4; padding:16px 14px; color:oklch(0.945 0.005 165); overflow:hidden; box-sizing:border-box;">
+          <div style="font-size:15px; font-weight:600;">Study</div>
+          <div class="mono" style="font-size:7.5px; letter-spacing:.1em; color:oklch(0.6 0.009 165); margin:3px 0 12px;">SESSION 1 · JUL–AUG 2026</div>
+          <div style="background:linear-gradient(160deg, oklch(0.27 0.022 158), oklch(0.222 0.008 165)); border:1px solid oklch(0.31 0.008 165); border-radius:11px; padding:11px 12px; margin-bottom:8px;">
+            <div class="mono" style="font-size:7px; letter-spacing:.1em; color:oklch(0.82 0.075 155); margin-bottom:6px;">DUE TO PRACTICE · 14 RIPE</div>
+            <div style="font-size:11.5px; font-weight:600; line-height:1.45;">Which electrolyte imbalance causes peaked T-waves on an ECG?</div>
+          </div>
+          <div style="display:flex; gap:6px; margin-bottom:12px;"><span style="flex:1; text-align:center; font-size:9.5px; padding:7px 0; border-radius:8px; border:1px solid oklch(0.31 0.008 165); color:oklch(0.75 0.008 165);">Again</span><span style="flex:1; text-align:center; font-size:9.5px; padding:7px 0; border-radius:8px; border:1px solid oklch(0.31 0.008 165); color:oklch(0.75 0.008 165);">Good</span><span style="flex:1; text-align:center; font-size:9.5px; padding:7px 0; border-radius:8px; background:oklch(0.66 0.07 155); color:oklch(0.2 0.02 160); font-weight:600;">Easy</span></div>
+          <div class="mono" style="font-size:7px; letter-spacing:.12em; color:oklch(0.6 0.009 165); margin-bottom:5px;">EXAM STUDY PLAN</div>
+          <div style="background:oklch(0.222 0.008 165); border:1px solid oklch(0.31 0.008 165); border-radius:11px; padding:10px 12px;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;"><span style="font-size:10.5px; font-weight:600; white-space:nowrap;">BIOS150 Exam 1</span><span class="mono" style="flex:none; font-size:7px; color:oklch(0.6 0.009 165); white-space:nowrap;">JUL 20 · 4D</span></div>
+            <div style="display:flex; align-items:center; gap:7px; padding:4px 0;"><span style="width:12px; height:12px; flex:none; border-radius:50%; background:oklch(0.66 0.07 155); color:oklch(0.2 0.02 160); display:flex; align-items:center; justify-content:center; font-size:7px;">✓</span><span style="flex:1; min-width:0; font-size:9.5px; color:oklch(0.6 0.009 165); text-decoration:line-through; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Membrane transport</span><span class="mono" style="font-size:7px; color:oklch(0.6 0.009 165);">TUE</span></div>
+            <div style="display:flex; align-items:center; gap:7px; padding:4px 0;"><span style="width:12px; height:12px; flex:none; border-radius:50%; border:1.5px solid oklch(0.82 0.075 155); box-sizing:border-box;"></span><span style="flex:1; min-width:0; font-size:9.5px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Cell transport review</span><span class="mono" style="font-size:7px; color:oklch(0.82 0.075 155);">WED</span></div>
+            <div style="display:flex; align-items:center; gap:7px; padding:4px 0;"><span style="width:12px; height:12px; flex:none; border-radius:50%; border:1.5px solid oklch(0.6 0.009 165); box-sizing:border-box;"></span><span style="flex:1; min-width:0; font-size:9.5px; color:oklch(0.75 0.008 165); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Membrane potentials</span><span class="mono" style="font-size:7px; color:oklch(0.6 0.009 165);">THU</span></div>
+          </div>
+          <div style="margin-top:10px; height:3px; border-radius:2px; background:oklch(0.265 0.009 165); overflow:hidden;"><span style="display:block; width:60%; height:100%; background:oklch(0.66 0.07 155);"></span></div>
+          <div class="mono" style="font-size:7px; color:oklch(0.6 0.009 165); margin-top:5px;">12 OF 20 REVIEWED TODAY</div>
+        </div>
+      </div>
+      <div class="mono" style="font-size:11.5px; color:#46544b; margin-top:18px; text-align:center; letter-spacing:.14em;">IPAD</div>
+    </div>
+    <div class="device" data-reveal style="width:158px; flex:none;">
+      <div style="position:relative; background:#0b0e0b; border-radius:28px; padding:6px; box-shadow:0 50px 80px -45px rgba(16,28,20,.55), 0 0 0 1px rgba(255,255,255,.3);">
+        <span style="position:absolute; top:12px; left:50%; transform:translateX(-50%); width:38px; height:10px; border-radius:6px; background:#000; z-index:2;"></span>
+        <div style="background:oklch(0.185 0.006 165); border-radius:23px; aspect-ratio:9 / 19.5; padding:28px 9px 12px; color:oklch(0.945 0.005 165); overflow:hidden; box-sizing:border-box; position:relative;">
+          <div style="font-size:11.5px; font-weight:600;">Good morning</div>
+          <div class="mono" style="font-size:6px; letter-spacing:.08em; color:oklch(0.6 0.009 165); margin:2px 0 8px;">WEEK 3 OF 8 · SESSION 1</div>
+          <div style="background:oklch(0.222 0.008 165); border:1px solid oklch(0.31 0.008 165); border-radius:9px; padding:8px; margin-bottom:6px; display:flex; gap:6px; align-items:flex-start;"><span style="width:5px; height:5px; border-radius:50%; background:oklch(0.82 0.075 155); flex:none; margin-top:3px;"></span><span style="font-size:8.5px; font-weight:600; line-height:1.4;">You're okay — nothing due today.</span></div>
+          <div style="background:linear-gradient(160deg, oklch(0.27 0.022 158), oklch(0.222 0.008 165)); border:1px solid oklch(0.31 0.008 165); border-radius:9px; padding:8px; margin-bottom:6px;"><div class="mono" style="font-size:5.5px; letter-spacing:.1em; color:oklch(0.82 0.075 155); margin-bottom:4px;">STUDY · EXAM IN 4 DAYS</div><div style="font-size:8.5px; font-weight:600; line-height:1.4;">20-minute review ready</div><span style="display:inline-block; margin-top:5px; background:oklch(0.66 0.07 155); color:oklch(0.2 0.02 160); font-size:7px; font-weight:600; padding:4px 8px; border-radius:6px;">Start review</span></div>
+          <div style="background:oklch(0.222 0.008 165); border:1px solid oklch(0.31 0.008 165); border-radius:9px; padding:8px;"><div class="mono" style="font-size:5.5px; letter-spacing:.1em; color:oklch(0.6 0.009 165); margin-bottom:4px;">NEXT UP</div><div style="display:flex; align-items:center; gap:5px; font-size:7.5px; padding:2px 0;"><span style="width:4px; height:4px; border-radius:50%; background:oklch(0.78 0.06 200); flex:none;"></span><span style="flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Quiz 3 — Med calcs</span><span class="mono" style="font-size:6px; color:oklch(0.6 0.009 165);">THU</span></div><div style="display:flex; align-items:center; gap:5px; font-size:7.5px; padding:2px 0;"><span style="width:4px; height:4px; border-radius:50%; background:oklch(0.82 0.075 155); flex:none;"></span><span style="flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Lab report 4</span><span class="mono" style="font-size:6px; color:oklch(0.6 0.009 165);">FRI</span></div></div>
+          <div style="display:flex; align-items:center; gap:5px; padding:7px 2px 0; font-size:7px;"><span style="width:10px; height:10px; flex:none; border-radius:50%; background:oklch(0.27 0.022 158); display:flex; align-items:center; justify-content:center; color:oklch(0.82 0.075 155); font-size:5.5px;">✓</span><span style="color:oklch(0.75 0.008 165); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Cleared for clinicals</span><span class="mono" style="font-size:6px; color:oklch(0.6 0.009 165); margin-left:auto;">thru Oct</span></div>
+        </div>
+      </div>
+      <div class="mono" style="font-size:11.5px; color:#46544b; margin-top:18px; text-align:center; letter-spacing:.14em;">IPHONE</div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 QUOTES — section intentionally disabled: the design's quotes are
+     placeholders. Uncomment and replace with REAL quotes (with permission)
+     once cohort testimonials exist; never ship invented ones.
+<!~~ 06 QUOTES · placeholder copy, replace with real quotes before promoting the page ~~>
+<section id="quotes" style="max-width:1360px; margin:0 auto; padding:0 56px 150px;">
+  <div style="display:flex; align-items:baseline; justify-content:space-between; border-top:1px solid rgba(22,32,26,.16); padding-top:18px; margin-bottom:72px;">
+    <div class="mono" style="font-size:11px; letter-spacing:.22em; color:#46544b;">06 — FROM THE FIRST COHORTS</div>
+    <div class="mono" style="font-size:11px; letter-spacing:.22em; color:#8a988e;">EARLY FEEDBACK</div>
+  </div>
+  <div class="quotes-grid" style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0;">
+    <figure style="margin:0; border-left:1px solid rgba(22,32,26,.16); padding:6px 48px 6px 30px;">
+      <blockquote style="margin:0 0 28px; font-family:'Newsreader',serif; font-style:italic; font-size:25px; line-height:1.4; letter-spacing:-.2px; text-wrap:pretty;">&ldquo;It's the only app that tells me I'm okay, instead of showing me another list.&rdquo;</blockquote>
+      <figcaption class="mono" style="font-size:11.5px; letter-spacing:.06em; color:#6b7a70;">ACCELERATED BSN STUDENT</figcaption>
+    </figure>
+    <figure style="margin:0; border-left:1px solid rgba(22,32,26,.16); padding:6px 48px 6px 30px;">
+      <blockquote style="margin:0 0 28px; font-family:'Newsreader',serif; font-style:italic; font-size:25px; line-height:1.4; letter-spacing:-.2px; text-wrap:pretty;">&ldquo;I stopped keeping a paper planner three weeks in. One screen in the morning, and I'm done.&rdquo;</blockquote>
+      <figcaption class="mono" style="font-size:11.5px; letter-spacing:.06em; color:#6b7a70;">SECOND-YEAR BSN STUDENT</figcaption>
+    </figure>
+    <figure style="margin:0; border-left:1px solid rgba(22,32,26,.16); padding:6px 48px 6px 30px;">
+      <blockquote style="margin:0 0 28px; font-family:'Newsreader',serif; font-style:italic; font-size:25px; line-height:1.4; letter-spacing:-.2px; text-wrap:pretty;">&ldquo;The first app I've seen students still using after midterms. Compliance chasing dropped off our plate.&rdquo;</blockquote>
+      <figcaption class="mono" style="font-size:11.5px; letter-spacing:.06em; color:#6b7a70;">CLINICAL COORDINATOR, ADN PROGRAM</figcaption>
+    </figure>
+  </div>
+</section>
+
+
+-->
+
+<!-- 07 PRIVACY -->
+<section id="privacy" style="max-width:1360px; margin:0 auto; padding:0 56px 150px;">
+  <div style="border-top:1px solid rgba(22,32,26,.16); border-bottom:1px solid rgba(22,32,26,.16); padding:88px 0; text-align:center;">
+    <div class="mono" style="font-size:11px; letter-spacing:.22em; color:#46544b; margin-bottom:30px;">07 — PRIVACY, BY ARCHITECTURE</div>
+    <p style="font-size:52px; font-weight:800; letter-spacing:-2.2px; line-height:1.08; max-width:860px; margin:0 auto 34px; text-wrap:balance;">No account. No server. Data lives in the student's own iCloud.</p>
+    <div class="privacy-chips" style="display:flex; justify-content:center; gap:12px; margin-bottom:34px;">
+      <span class="mono" style="font-size:11.5px; letter-spacing:.1em; border:1px solid rgba(22,32,26,.25); border-radius:99px; padding:8px 18px; color:#33473a;">NO SIGN-UP</span>
+      <span class="mono" style="font-size:11.5px; letter-spacing:.1em; border:1px solid rgba(22,32,26,.25); border-radius:99px; padding:8px 18px; color:#33473a;">NO TRACKING</span>
+      <span class="mono" style="font-size:11.5px; letter-spacing:.1em; border:1px solid rgba(22,32,26,.25); border-radius:99px; padding:8px 18px; color:#33473a;">ON-DEVICE AI</span>
+      <span class="mono" style="font-size:11.5px; letter-spacing:.1em; border:1px solid rgba(22,32,26,.25); border-radius:99px; padding:8px 18px; color:#33473a;">WORKS OFFLINE</span>
+    </div>
+    <a href="privacy.html" style="font-size:15px; font-weight:600; border-bottom:1px solid rgba(51,71,58,.4); padding-bottom:2px;">Read the privacy policy</a>
+  </div>
+</section>
+
+<!-- 08 FAQ -->
+<section id="faq" style="max-width:1360px; margin:0 auto; padding:0 56px 150px;">
+  <div class="faq-grid" style="display:grid; grid-template-columns:.8fr 1.2fr; gap:96px; align-items:start;">
+    <div>
+      <div class="mono" style="font-size:11px; letter-spacing:.22em; color:#46544b; margin-bottom:30px;">08 — QUESTIONS</div>
+      <h2 style="font-size:56px; font-weight:800; letter-spacing:-2.2px; margin:0 0 20px; line-height:1.02; text-wrap:balance;">Asked by every orientation.</h2>
+      <p style="font-size:16px; line-height:1.6; color:#46544b; margin:0; text-wrap:pretty;">Something missing? <a href="mailto:ftotechnologies@gmail.com">Write to us</a> — a person answers.</p>
+    </div>
+    <div style="border-bottom:1px solid rgba(22,32,26,.14);">
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false"><span style="font-size:18px; font-weight:600; letter-spacing:-.2px;">Does it work with our LMS?</span><span class="faq-mark mono" style="font-size:18px; color:#6f9d7f; flex:none;">+</span></button>
+        <p class="faq-a">NurseOS reads the standard calendar feed that Canvas, Blackboard, Brightspace and Moodle all publish. If your program's LMS can export a calendar link — nearly all can — setup is the same single paste.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false"><span style="font-size:18px; font-weight:600; letter-spacing:-.2px;">Do students need an account?</span><span class="faq-mark mono" style="font-size:18px; color:#6f9d7f; flex:none;">+</span></button>
+        <p class="faq-a">No. There is no sign-up, no login, and no NurseOS server. The app stores everything in the student's own iCloud, so it works the moment it's installed.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false"><span style="font-size:18px; font-weight:600; letter-spacing:-.2px;">Where does student data live?</span><span class="faq-mark mono" style="font-size:18px; color:#6f9d7f; flex:none;">+</span></button>
+        <p class="faq-a">On the student's devices and in their personal iCloud, encrypted by Apple. Nothing is sent to us — we couldn't read a student's grades if we wanted to. AI features run entirely on-device.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false"><span style="font-size:18px; font-weight:600; letter-spacing:-.2px;">What does it cost?</span><span class="faq-mark mono" style="font-size:18px; color:#6f9d7f; flex:none;">+</span></button>
+        <p class="faq-a">The app is free to download and use. There is no institutional contract, no per-seat license, and nothing for a program to procure — you can simply recommend it at orientation.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false"><span style="font-size:18px; font-weight:600; letter-spacing:-.2px;">How do compliance reminders work?</span><span class="faq-mark mono" style="font-size:18px; color:#6f9d7f; flex:none;">+</span></button>
+        <p class="faq-a">When a student adds a document — a CPR card, a TB test, a titer report — the app extracts the dates, applies the renewal rule, and shows its reasoning. Reminders start 30 days before a renewal and never fire during quiet hours.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false"><span style="font-size:18px; font-weight:600; letter-spacing:-.2px;">Does it work offline?</span><span class="faq-mark mono" style="font-size:18px; color:#6f9d7f; flex:none;">+</span></button>
+        <p class="faq-a">Yes. Everything — schedule, grades, study, documents — is stored locally. A clinical site with no signal changes nothing.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false"><span style="font-size:18px; font-weight:600; letter-spacing:-.2px;">Which programs is it built for?</span><span class="faq-mark mono" style="font-size:18px; color:#6f9d7f; flex:none;">+</span></button>
+        <p class="faq-a">BSN, ADN, and accelerated programs on session or semester calendars. Course patterns like NR103 or 8-week sessions are recognized automatically; everything else is configurable in one screen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 EMAIL -->
+<section id="email" style="background:radial-gradient(700px 360px at 15% 100%, oklch(0.27 0.022 158 / .7), transparent 60%), oklch(0.14 0.007 165); color:oklch(0.945 0.005 165);">
+  <div style="max-width:1360px; margin:0 auto; padding:96px 56px; display:grid; grid-template-columns:1fr 1fr; gap:96px; align-items:center;">
+    <div>
+      <div class="mono" style="font-size:11px; letter-spacing:.22em; color:oklch(0.82 0.075 155); margin-bottom:24px;">FOR PROGRAM STAFF</div>
+      <h2 style="font-size:46px; font-weight:800; letter-spacing:-1.8px; margin:0 0 16px; line-height:1.05;">Get the orientation one-pager.</h2>
+      <p style="font-size:16px; line-height:1.65; color:oklch(0.72 0.009 165); margin:0; text-wrap:pretty;">A printable page you can hand to a cohort: what the app does, the one paste it needs, and the privacy answers parents ask. Plus launch notes, a few times a year.</p>
+    </div>
+    <div id="email-wrap">
+      <form id="email-form" style="display:flex; gap:12px;">
+        <input class="email-input" id="email-input" type="email" required placeholder="name@school.edu" aria-label="Email address">
+        <button class="email-send" type="submit">Send it</button>
+      </form>
+      <div id="email-done">
+        <span style="width:24px; height:24px; border-radius:50%; background:oklch(0.27 0.022 158); color:oklch(0.82 0.075 155); display:flex; align-items:center; justify-content:center; font-size:13px;">✓</span>
+        <span style="font-size:15.5px;">On its way. Check your inbox in a minute.</span>
+      </div>
+      <p class="mono" style="font-size:11.5px; color:oklch(0.6 0.009 165); margin:15px 0 0;">No list-selling, no drip campaign. Unsubscribe is one click.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="overflow:hidden;">
+  <div style="max-width:1360px; margin:0 auto; padding:70px 56px 0; display:flex; align-items:center; justify-content:space-between; font-size:13.5px; color:#6b7a70;">
+    <span style="display:flex; align-items:center; gap:8px;"><span style="width:8px; height:8px; border-radius:50%; background:#6f9d7f;"></span><span style="font-weight:600; color:#33473a;">NurseOS</span> · © FTO Technologies</span>
+    <div style="display:flex; gap:28px;">
+      <a href="privacy.html" style="color:#46544b;">Privacy Policy</a>
+      <a href="mailto:ftotechnologies@gmail.com" style="color:#46544b;">Support</a>
+      <a href="#faq" style="color:#46544b;">FAQ</a>
+    </div>
+  </div>
+  <div class="watermark" aria-hidden="true" style="text-align:center; font-size:230px; font-weight:800; letter-spacing:-12px; line-height:.72; color:rgba(22,32,26,.055); margin-top:44px; transform:translateY(18%); user-select:none; white-space:nowrap;">NurseOS</div>
 </footer>
 
+<script src="main.js" defer></script>
 </body>
 </html>
