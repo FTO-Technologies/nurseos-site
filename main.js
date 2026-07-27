@@ -102,7 +102,7 @@
     document.getElementById('paste-result').classList.add('shown');
   });
 
-  // ---- Email capture (Kit form 9729612; endpoint verified 2026-07-26) -----
+  // ---- Email capture (Kit form 9730669 (One-pager); endpoint verified 2026-07-26) -----
   var emailForm = document.getElementById('email-form');
   if (emailForm) emailForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -110,7 +110,7 @@
     if (!email) return;
     var btn = document.getElementById('email-send');
     btn.disabled = true; btn.textContent = 'Sending\u2026';
-    fetch('https://app.kit.com/forms/9729612/subscriptions', {
+    fetch('https://app.kit.com/forms/9730669/subscriptions', {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: new URLSearchParams({ email_address: email })
